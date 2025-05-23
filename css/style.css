@@ -533,7 +533,7 @@ footer {
 }
 
 /* Hamburger Icon Styles for Mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hamburger {
     display: block; /* Make hamburger icon visible */
     font-size: 30px; /* Adjust size as needed */
@@ -549,7 +549,7 @@ footer {
   nav a:not(.hamburger) {
     display: none; /* Hide other links on mobile */
   }
-
+ */
   /* Adjust header to give enough space for the icon */
   header {
     padding-top: 30px; /* Ensure there is enough space for the icon */
@@ -557,7 +557,7 @@ footer {
 }
 
 /* Hamburger Icon Styles for Mobile */
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .hamburger {
     display: block; /* Make hamburger icon visible */
     font-size: 30px; /* Adjust size as needed */
@@ -580,7 +580,7 @@ footer {
     padding-top: 30px; /* Give enough space above header */
   }
 }
-
+ */
 
 /* =========================
    ORDER BUTTON
