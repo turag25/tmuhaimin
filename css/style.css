@@ -487,7 +487,7 @@ footer {
 /* =========================
    HAMBURGER
 ========================= */
-.hamburger {
+/* .hamburger {
   display: none;
   background: none;
   border: none;
@@ -502,7 +502,7 @@ footer {
   .hamburger {
     display: inline-block;
   }
-}
+} */
 
 /* =========================
    MOBILE MENU
