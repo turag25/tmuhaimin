@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header>Order Dashboard</header>
+
+  <div class="dashboard-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Client Name</th>
+          <th>Email</th>
+          <th>Service</th>
+          <th>Details</th>
+          <th>Status</th>
+          <th>Submitted On</th>
+        </tr>
+      </thead>
+      <tbody id="orderBody">
+        <!-- Rows will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    //     const sheetCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS90lcdhVA4bf9cahl5mja5mKZZNqvokCj-pl0-ND2uSGRKhG-zJlxTvLEkNmqD7En-FBzxR5J5dYf_/pub?output=csv";
+
+    // fetch(sheetCSV + "&cachebuster=" + new Date().getTime())
+    //   .then((res) => res.text())
+    //   .then((csvText) => {
+    //     const rows = csvText.trim().split("\n").slice(1);
+    //     const tbody = document.getElementById("orderBody");
+
+    
+
+
+    // const sheetCSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS90lcdhVA4bf9cahl5mja5mKZZNqvokCj-pl0-ND2uSGRKhG-zJlxTvLEkNmqD7En-FBzxR5J5dYf_/pub?output=csv';
+
+    //   fetch(sheetCSV)
+    //     .then(response => response.text())
+    //     .then(csvText => {
+    //       // Process your CSV data here
+    //       console.log(csvText);
+    //     })
+    //     .catch(error => {
+    //       console.error('Error fetching CSV data:', error);
+    //     });
+
+
+
+
+    //     tbody.innerHTML = ""; // Clear old rows
+
+    //     rows.forEach((row) => {
+    //       const columns = row.split(",");
+
+    //       // Skip malformed rows
+    //       if (columns.length < 6) return;
+
+    //       const tr = document.createElement("tr");
+    //       const statusClass =
+    //         columns[4].toLowerCase().includes("pending")
+    //           ? "status-pending"
+    //           : columns[4].toLowerCase().includes("completed")
+    //           ? "status-completed"
+    //           : "status-in-progress";
+
+    //       tr.innerHTML = `
+    //         <td>${columns[0]}</td>
+    //         <td>${columns[1]}</td>
+    //         <td>${columns[2]}</td>
+    //         <td>${columns[3]}</td>
+    //         <td class="${statusClass}">${columns[4]}</td>
+    //         <td>${columns[5]}</td>
+    //       `;
+    //       tbody.appendChild(tr);
+    //     });
+
+
+    const sheetCSV =
+  "https://corsproxy.io/?https://docs.google.com/spreadsheets/d/e/2PACX-1vS90lcdhVA4bf9cahl5mja5mKZZNqvokCj-pl0-ND2uSGRKhG-zJlxTvLEkNmqD7En-FBzxR5J5dYf_/pub?output=csv";
+
+fetch(sheetCSV)
+  .then((res) => res.text())
+  .then((csvText) => {
+    const rows = csvText.trim().split("\n").slice(1);
+    const tbody = document.getElementById("orderBody");
+
+    rows.forEach((row) => {
+      const columns = row.split(",");
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${columns[0]}</td>
+        <td>${columns[1]}</td>
+        <td>${columns[2]}</td>
+        <td>${columns[3]}</td>
+        <td class="${columns[4].toLowerCase().includes('pending') ? 'status-pending' : columns[4].toLowerCase().includes('completed') ? 'status-completed' : 'status-in-progress'}">${columns[4]}</td>
+        <td>${columns[5]}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch((err) => console.error("Failed to fetch CSV:", err));
+    
+
+  </script>
+</body>
+</html>

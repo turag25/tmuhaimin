@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turag Muhaimin</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <header>
+    <h1>TURAG MUHAIMIN</h1>	
+  </header>
+
+  <nav>
+    <a href="index.html">Hey!</a>
+    <a href="javascript:void(0)" onclick="openModal()">Contact Me</a>
+    <a href="https://www.github.com">Github</a>
+    <a href="https://turag007.itch.io/">itch</a>
+    <!-- Hamburger Icon (visible only on mobile) -->
+    <button class="hamburger" onclick="toggleMobileMenu()">&#9776;</button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-nav">
+   <a href="index.html">Hey!</a>
+   <a href="javascript:void(0)" onclick="openModal()">Contact Me</a>
+   <a href="https://www.github.com">Github</a>
+   <a href="https://turag007.itch.io/">itch</a>
+  </div>
+
+  <div class="container">
+    <div class="ads-carousel">
+      <h2>3D Game Artist . 2D Artist . Illustrator . Pixel Artist . Visualizer</h2>
+      <div class="product-wrapper">
+        <!-- Portfolio Cards -->
+        <div class="product-card">
+          <img src="img/image1.png" alt="Product 1">
+          <h3>2D Illustration</h3>
+          <a href="https://www.cara.app/turag" class="portfolio-button" target="_blank">PORTFOLIO</a>
+        </div>
+        <div class="product-card">
+          <img src="img/image2.png" alt="Product 2">
+          <h3>3D art</h3> 
+          <a href="https://teowmin.artstation.com/" class="portfolio-button" target="_blank">PORTFOLIO</a>
+        </div>
+        <div class="product-card">
+          <img src="img/image3.png" alt="Product 3">
+          <h3>Pixel Art</h3>
+          <a href="https://www.instagram.com/beastbinary?igsh=MWp4dnF2dDBja2w2Nw==" class="portfolio-button" target="_blank">PORTFOLIO</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <h2><a href="your-resume-link.html" class="resume-button" target="_blank">MY RESUME</a></h2>
+      <!-- <button id="openOrderModal">Place Your Order!</button> -->
+    </div>
+  </div>
+
+  <div class="slider-container">
+    <label class="dark-mode-slider">
+      <input type="checkbox" class="dark-mode-checkbox" onclick="toggleDarkMode()">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Turag Muhaimin. All rights reserved.</p>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <div class="modal-header">
+        <h2>CONTACT ME</h2>
+      </div>
+      <div class="modal-body">
+        <div class="form-column">
+          <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+            <!-- <button type="submit">Send</button> -->
+              
+          </form>
+        </div>
+        <div class="map-column">
+          <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/your-profile" target="_blank"><img src="img/facebook.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/your-profile" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+        <a href="https://www.whatsapp.com/your-profile" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+        <a href="https://www.youtube.com/your-profile" target="_blank"><img src="img/youtube.png" alt="YouTube" /></a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Dynamic Form Container -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeOrder">&times;</span>
+    <h2>Place Your Order</h2>
+
+    <!-- Service Type Selector -->
+    <label for="serviceType">Choose Service:</label>
+    <select id="serviceType" name="serviceType" required>
+      <option value="">-- Select Service --</option>
+      <option value="3d">3D Modeling</option>
+      <option value="2d">2D Illustration</option>
+      <option value="pixel">Pixel Art</option>
+    </select>
+
+    <!-- Single Form -->
+    <form id="orderForm">
+
+      <!-- 3D Modeling Options -->
+      <div class="service-options" id="options-3d" style="display:none;">
+        <label>Model Type:</label>
+        <select name="modelType">
+          <option>Character</option>
+          <option>Prop</option>
+          <option>Environment</option>
+        </select>
+
+        <label>Poly Count:</label>
+        <select name="polyCount">
+          <option>Low</option>
+          <option>Mid</option>
+          <option>High</option>
+        </select>
+
+        <label>Texture Type:</label>
+        <select name="textureType">
+          <option>PBR</option>
+          <option>Hand-painted</option>
+          <option>Stylized</option>
+        </select>
+
+        <label>Format:</label>
+        <select name="modelFormat">
+          <option>FBX</option>
+          <option>OBJ</option>
+          <option>Blend</option>
+        </select>
+
+        <div class="checkbox-row" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <label class="checkbox-row" style="display:flex; align-items: center; gap: 6px;"><input type="checkbox" name="rigging"> Add Rigging</label>
+          <label class="checkbox-row" style="display:flex; align-items: center; gap: 6px;"><input type="checkbox" name="animation"> Add Animation</label>
+        </div>
+      </div>
+
+      <!-- 2D Illustration Options -->
+      <div class="service-options" id="options-2d" style="display:none;">
+        <label>Art Style:</label>
+        <select name="artStyle">
+          <option>Cartoon</option>
+          <option>Semi-Realistic</option>
+          <option>Line Art</option>
+        </select>
+
+        <label>Resolution:</label>
+        <select name="illustrationResolution">
+          <option>HD</option>
+          <option>2K</option>
+          <option>4K</option>
+        </select>
+
+        <label>Background:</label>
+        <select name="background">
+          <option>Transparent</option>
+          <option>Simple</option>
+          <option>Detailed</option>
+        </select>
+
+        <label>Format:</label>
+        <select name="illustrationFormat">
+          <option>PNG</option>
+          <option>JPG</option>
+          <option>PSD</option>
+        </select>
+      </div>
+
+      <!-- Pixel Art Options -->
+      <div class="service-options" id="options-pixel" style="display:none;">
+        <label>Pixel Type:</label>
+        <select name="pixelType">
+          <option>Character</option>
+          <option>Tileset</option>
+          <option>UI</option>
+          <option>Scene</option>
+        </select>
+
+        <label>Resolution:</label>
+        <select name="pixelResolution">
+          <option>16x16</option>
+          <option>32x32</option>
+          <option>64x64</option>
+        </select>
+
+        <label>Color Palette:</label>
+        <select name="colorPalette">
+          <option>NES</option>
+          <option>GameBoy</option>
+          <option>Custom</option>
+        </select>
+
+        <div class="checkbox-row" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+          <label class="checkbox-row" style="display:flex; align-items: center; gap: 6px;"><input type="checkbox" name="pixelAnimation"> Include Animation</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <!-- <div style="text-align: center; margin-top: 15px;">
+        <button type="submit" id="orderBtn">SEND ORDER</button>
+      </div> -->
+    </form>
+  </div>
+</div>
+
+<style>
+  .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); justify-content: center; align-items: center; z-index: 9999; }
+
+  .modal-content { background: #111; color: white; padding: 20px; border-radius: 10px; width: 90%; max-width: 700px; overflow-y: auto; max-height: 90vh; position: relative; animation: fadeIn 0.3s ease-out; }
+
+  .modal-content select, .modal-content input, .modal-content textarea {
+    width: 100%; margin: 5px 0 15px 0; padding: 10px; border-radius: 5px; border: none;
+  }
+
+  .service-options { display: none; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .close { position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: #fff; }
+</style>
+
+  <!-- JS Script -->
+  <script src="scripts/script.js"></script>
+
+</body>
+</html>

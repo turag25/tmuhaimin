@@ -1,0 +1,282 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+/*  background-color: #f7f7f7;*/
+  font-family: 'Silkscreen', sans-serif;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  overflow: hidden;
+
+  background: url('img/background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Welcome Modal Styles */
+#welcome-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+  backdrop-filter: blur(8px); /* Apply blur for glassmorphism effect */
+  animation: modalFadeIn 0.5s ease-out forwards; /* Fade-in animation */
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent grey background */
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(8px); /* Apply blur for glassmorphism effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  opacity: 0;
+  transform: scale(0.95); /* Start with a slightly smaller size */
+}
+
+.modal-content h2 {
+  color: #4b6d91; /* Navy bluish color */
+  margin-bottom: 1rem;
+}
+
+.button-group button,
+.payment-methods button {
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border: 2px solid #4b6d91; /* Navy bluish color */
+  background-color: #ffffff;
+  color: #4b6d91;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.button-group button:hover,
+.payment-methods button:hover {
+  background-color: #4b6d91;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+
+
+/* Centered Button Group */
+.center-wrapper {
+  text-align: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 5% auto;
+  padding: 2rem;
+  border: 3px solid #4b6d91;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: popupAnimation 0.5s ease-out forwards;
+}
+
+.modal-content h2 {
+  color: #4b6d91;
+  margin-bottom: 1rem;
+}
+
+/* Close Button */
+.close, .close-payment {
+  color: #333;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover, .close-payment:hover {
+  color: #ff4d4d;
+}
+
+/* Proceed Button */
+.proceed-btn {
+  font-family: 'Silkscreen', sans-serif;
+  background-color: #4b6d91;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  margin: 1rem auto;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.proceed-btn:hover {
+  background-color: #ffffff;
+  color: #4b6d91;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Package Grid */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+
+.package {
+  border: 2px solid #4b6d91;
+  padding: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.package:hover {
+  background-color: rgba(75, 109, 145, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: glowEffect 1s ease-in-out infinite;
+}
+
+.package h3 {
+  color: #4b6d91;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.package ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: #333;
+}
+
+.package ul li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+
+/* Package Card with Glassmorphism */
+.package-card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(10px); /* Apply the blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border to define edges */
+  
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.package-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Animation for Modal Popup */
+@keyframes popupAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Glow Animation for Package Hover */
+@keyframes glowEffect {
+  0% {
+    box-shadow: 0 0 5px #4b6d91, 0 0 10px #4b6d91, 0 0 15px #4b6d91;
+  }
+  50% {
+    box-shadow: 0 0 10px #4b6d91, 0 0 20px #4b6d91, 0 0 30px #4b6d91;
+  }
+  100% {
+    box-shadow: 0 0 5px #4b6d91, 0 0 10px #4b6d91, 0 0 15px #4b6d91;
+  }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+  }
+
+  .package-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fade-in Effect for Welcome Modal */
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+

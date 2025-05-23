@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Service Packages</title>
+  <link rel="stylesheet" href="packages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+  <div class="center-wrapper" style="display: none;">
+  <div class="button-group">
+    <button class="open-modal" data-modal="modal3d">3D Modeling</button>
+    <button class="open-modal" data-modal="modal2d">2D Illustration</button>
+    <button class="open-modal" data-modal="modalpixel">Pixel Art</button>
+  </div>
+</div>
+
+  
+
+ <!-- Intro Modal -->
+<div id="introDialog" class="modal">
+  <div class="modal-content">
+    <h2>Would you like to see some affordable packages?</h2>
+    <div class="button-group">
+      <button class="close-dialog">Go Back</button>
+      <button class="sure-btn">Sure!</button> <!-- Don't use .open-modal here -->
+    </div>
+  </div>
+</div>
+
+<!-- Service Buttons (Initially hidden) -->
+<div class="center-wrapper" style="display: none;">
+  <div class="button-group">
+    <button class="open-modal" data-modal="modal3d">3D Modeling</button>
+    <button class="open-modal" data-modal="modal2d">2D Illustration</button>
+    <button class="open-modal" data-modal="modalPixel">Pixel Art</button>
+  </div>
+</div>
+
+<!-- 3D Modeling Modal -->
+<div id="modal3d" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>3D Modeling Packages</h2>
+    <div class="package-grid">
+      <div class="package-card" onclick="showPaymentModal('3D Modeling', 'Basic')">
+        <h3>Basic</h3>
+        <p>Low-poly object</p>
+        <p>Delivery: 2 days</p>
+        <p class="price">$50</p>
+      </div>
+      <div class="package-card" onclick="showPaymentModal('3D Modeling', 'Standard')">
+        <h3>Standard</h3>
+        <p>Textured object + UV unwrap</p>
+        <p>Delivery: 4 days</p>
+        <p class="price">$100</p>
+      </div>
+      <div class="package-card" onclick="showPaymentModal('3D Modeling', 'Premium')">
+        <h3>Premium</h3>
+        <p>Game-ready prop + textures</p>
+        <p>Delivery: 7 days</p>
+        <p class="price">$200</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2D Illustration Modal -->
+<div id="modal2d" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>2D Illustration Packages</h2>
+    <div class="package-grid">
+      <div class="package-card" onclick="showPaymentModal('2D Illustration', 'Basic')">
+        <h3>Basic</h3>
+        <p>Simple sketch</p>
+        <p>Delivery: 2 days</p>
+        <p class="price">$30</p>
+      </div>
+      <div class="package-card" onclick="showPaymentModal('2D Illustration', 'Standard')">
+        <h3>Standard</h3>
+        <p>Colored illustration</p>
+        <p>Delivery: 4 days</p>
+        <p class="price">$60</p>
+      </div>
+      <div class="package-card" onclick="showPaymentModal('2D Illustration', 'Premium')">
+        <h3>Premium</h3>
+        <p>Detailed artwork with background</p>
+        <p>Delivery: 6 days</p>
+        <p class="price">$120</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pixel Art Modal -->
+<div id="modalPixel" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Pixel Art Packages</h2>
+    <div class="package-grid">
+      <div class="package-card" onclick="showPaymentModal('Pixel Art', 'Basic')">
+        <h3>Basic</h3>
+        <p>Short description</p>
+        <p class="price">$50</p>
+      </div>
+
+      <div class="package-card" onclick="showPaymentModal('Pixel Art', 'Standard')">
+        <h3>Standard</h3>
+        <p>Better features</p>
+        <p class="price">$100</p>
+      </div>
+
+      <div class="package-card" onclick="showPaymentModal('Pixel Art', 'Premium')">
+        <h3>Premium</h3>
+        <p>Full package</p>
+        <p class="price">$150</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Payment Modal -->
+<div id="paymentModal" class="modal">
+  <div class="modal-content">
+    <span class="close close-payment">&times;</span>
+    <h2 id="package-name"></h2>
+    <p id="payment-message"></p>
+
+    <!-- Payment methods section -->
+    <div class="payment-methods">
+      <button>Credit Card</button>
+      <button>PayPal</button>
+      <button>Bank Transfer</button>
+    </div>
+  </div>
+</div>
+
+  <script src="packages.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* General page styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Dashboard container */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal-style table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.15); /* semi-transparent background */
+  border-radius: 12px;
+  backdrop-filter: blur(8px); /* Glassmorphism blur effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+/* Table header styling */
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* subtle white border */
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent background */
+  color: black;
+  font-weight: bold;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent background */
+  color: black;
+  font-size: 14px;
+}
+
+td.status {
+  text-transform: capitalize;
+}
+
+/* Status Styling with Glassmorphism */
+.status-pending {
+  background-color: rgba(255, 255, 0, 0.3);
+  color: #f1c40f;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-completed {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.status-in-progress {
+  background-color: rgba(41, 128, 185, 0.3);
+  color: #2980b9;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Hover effect */
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* slightly lighter on hover */
+}
+
+/* Action Buttons (Modal Style) */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.view {
+  background-color: #2196F3;
+}
+
+button.edit {
+  background-color: #FF9800;
+}
+
+button.delete {
+  background-color: #F44336;
+}
+
+button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Pagination (if needed) */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  color: #2196F3;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Form Elements */
+input[type="text"], input[type="email"], textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+.status-pending {
+  background-color: rgba(255, 255, 0, 0.3);
+  color: #f1c40f;
+}
+
+.status-completed {
+  background-color: rgba(46, 204, 113, 0.3);
+  color: #2ecc71;
+}
+
+.status-in-progress {
+  background-color: rgba(41, 128, 185, 0.3);
+  color: #2980b9;
+}
+
